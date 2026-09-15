@@ -1,0 +1,6 @@
+{
+  "name": "هتاف العاصمي - منصة تعليمية ذكية",
+  "description": "منصة حقائق العلوم التعليمية الذكية: تطبيق ويب تقدمي PWA متكامل لإدارة المدارس والطلاب والمعلمين، ملفات الإنجاز الرقمية، شهادات التكريم، وحل المسائل بالذكاء الاصطناعي.",
+  "requestFramePermissions": ["camera", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

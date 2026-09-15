@@ -1,0 +1,9 @@
+{
+  "appId": "sa.edu.sciencefacts",
+  "appName": "حقائق العلوم",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  }
+}
