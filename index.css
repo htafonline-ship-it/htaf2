@@ -1,0 +1,233 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --app-primary: #0891b2;
+  }
+
+  body {
+    font-family: 'Cairo', 'Tajawal', system-ui, -apple-system, sans-serif;
+    background-color: #060b18;
+    background-image: 
+      radial-gradient(circle at 15% 15%, rgba(37, 99, 235, 0.18) 0%, transparent 45%),
+      radial-gradient(circle at 85% 25%, rgba(147, 51, 234, 0.15) 0%, transparent 40%),
+      radial-gradient(circle at 50% 80%, rgba(6, 182, 212, 0.12) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #f1f5f9;
+  }
+}
+
+.app-primary-bg {
+  background-color: var(--app-primary);
+}
+
+.app-primary-text {
+  color: var(--app-primary);
+}
+
+/* Custom scrollbar styling in cyan-purple neon */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(6, 11, 24, 0.95);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #2563eb, #9333ea);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #38bdf8, #c084fc);
+}
+
+/* Glassmorphism Dark Navy Panels */
+.glass-navy {
+  background: rgba(11, 19, 43, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+}
+
+.glass-navy-subtle {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-navy-hover:hover {
+  background: rgba(15, 27, 60, 0.85);
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+/* Interactive Futuristic Glowing Card Effect */
+.hattan-interactive-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(13, 23, 50, 0.85) 0%, rgba(9, 15, 34, 0.92) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  border-radius: 1.5rem;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.hattan-interactive-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(
+    135deg,
+    transparent 20%,
+    rgba(56, 189, 248, 0.4) 40%,
+    rgba(168, 85, 247, 0.5) 60%,
+    transparent 80%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.hattan-interactive-card:hover {
+  transform: translateY(-4px) scale(1.008);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 
+    0 12px 35px -8px rgba(6, 11, 24, 0.8),
+    0 0 25px -4px rgba(56, 189, 248, 0.22),
+    0 0 35px -6px rgba(147, 51, 234, 0.18);
+}
+
+.hattan-interactive-card:hover::before {
+  opacity: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(6, 182, 212, 0.8) 0%,
+    rgba(59, 130, 246, 0.6) 30%,
+    rgba(168, 85, 247, 0.8) 70%,
+    rgba(245, 158, 11, 0.5) 100%
+  );
+}
+
+/* Active Highlighted Glowing State */
+.hattan-interactive-card.is-active {
+  border-color: rgba(56, 189, 248, 0.55);
+  box-shadow: 
+    0 0 30px -4px rgba(56, 189, 248, 0.3),
+    0 0 40px -6px rgba(147, 51, 234, 0.25);
+}
+
+.hattan-interactive-card.is-active::before {
+  opacity: 1;
+}
+
+/* Neon Glow Accents */
+.neon-glow-cyan {
+  box-shadow: 0 0 20px -2px rgba(6, 182, 212, 0.45);
+}
+
+.neon-glow-purple {
+  box-shadow: 0 0 20px -2px rgba(168, 85, 247, 0.45);
+}
+
+.neon-glow-amber {
+  box-shadow: 0 0 20px -2px rgba(245, 158, 11, 0.45);
+}
+
+.neon-glow-blue {
+  box-shadow: 0 0 20px -2px rgba(37, 99, 235, 0.45);
+}
+
+/* Subtle Shimmer Ray */
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(150%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+}
+
+.animate-shimmer-sweep {
+  animation: shimmerSweep 4s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Soft Floating / Breathing animation */
+@keyframes softFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-soft-float {
+  animation: softFloat 4s ease-in-out infinite;
+}
+
+@keyframes subtleRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-slow-spin {
+  animation: subtleRotate 20s linear infinite;
+}
+
+/* PWA Mobile & iPhone Notch Safe Area Support */
+:root {
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+}
+
+.safe-top {
+  padding-top: max(12px, env(safe-area-inset-top, 12px));
+}
+
+.safe-bottom {
+  padding-bottom: max(16px, env(safe-area-inset-bottom, 16px));
+}
+
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Enable smooth, fluid vertical scrolling across all devices, browsers, and iframes */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+
